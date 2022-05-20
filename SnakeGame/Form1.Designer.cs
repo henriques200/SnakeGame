@@ -32,7 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_txt_1 = new System.Windows.Forms.Label();
             this.label_score = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.label_game_over = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -40,6 +39,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.pictureBox1.Location = new System.Drawing.Point(13, 13);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(378, 425);
@@ -67,19 +67,10 @@
             this.label_score.TabIndex = 2;
             this.label_score.Text = "----";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(418, 55);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Iniciar";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // label_game_over
             // 
             this.label_game_over.AutoSize = true;
-            this.label_game_over.Location = new System.Drawing.Point(26, 28);
+            this.label_game_over.Location = new System.Drawing.Point(415, 122);
             this.label_game_over.Name = "label_game_over";
             this.label_game_over.Size = new System.Drawing.Size(35, 13);
             this.label_game_over.TabIndex = 4;
@@ -93,13 +84,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 450);
             this.Controls.Add(this.label_game_over);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.label_score);
             this.Controls.Add(this.label_txt_1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -111,7 +103,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_txt_1;
         private System.Windows.Forms.Label label_score;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label label_game_over;
     }

@@ -14,7 +14,7 @@ namespace SnakeGame
     public partial class Form1 : Form
     {
         //Declarar um novo jogador
-        private List<Circle>Snake = new List<Circle>();
+        private List<Circle> Snake = new List<Circle>();
 
         //Declarar um objeto para comida
         private Circle food = new Circle();
@@ -28,7 +28,7 @@ namespace SnakeGame
 
             //Definir a velocidade do jogo e iniciar o temporizador
             gameTimer.Interval = 1000 / Config.Speed;
-            gameTimer.Tick += update_screen();
+            gameTimer.Tick += update_screen;
             gameTimer.Start();
 
             //Iniciar novo jogo
@@ -75,7 +75,7 @@ namespace SnakeGame
         private void update_screen(object sender, EventArgs e)
         {
             //Verifica se o jogo chegou ao fim.
-            if(Config.GameOver == true)
+            if(Config.GameOver)
             {
                 if (Input.keypressed(Keys.Enter)) start_game();
             }
@@ -87,6 +87,7 @@ namespace SnakeGame
                 else if (Input.keypressed(Keys.Down) && Config.direction != Direction.Up) Config.direction = Direction.Down;
 
                 move_player();
+                
             }
 
             //Certificar que os dados sao eliminados para proceder a sua atualizacao.
@@ -101,15 +102,16 @@ namespace SnakeGame
         private void pictureBox1_Paint(object sender, PaintEventArgs e)
         {
             Graphics canvas = e.Graphics;
-            if (Config.GameOver != false)
+            if (!Config.GameOver)
             {
                 //Definir a cor da cobra
-                Brush snake_color;
+                
 
                 //Desenha os elementos do jogo.
-                for(int i=0; i<Snake.Count; i++)
+                for (int i=0; i<Snake.Count; i++)
                 {
-                    if(i == 0) snake_color = Brushes.Black; //Desenha Cabeca
+                    Brush snake_color;
+                    if (i == 0) snake_color = Brushes.Black; //Desenha Cabeca
                     else snake_color = Brushes.Green; //Desenha resto do corpo
 
                     //Desenha a cobra.
@@ -132,15 +134,10 @@ namespace SnakeGame
 
         private void move_player()
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            for (int i = Snake.Count-1; i >= Snake.Count; i--)
+            for (int i = Snake.Count - 1; i >= 0; i--)
             {
                 //Move a cabeca
-                if(i == 0)
+                if (i == 0)
                 {
                     switch (Config.direction)
                     {
@@ -157,6 +154,23 @@ namespace SnakeGame
                             Snake[i].y++;
                             break;
                     }
+                    int maxXpos = pictureBox1.Size.Width / Config.Width;
+                    int maxYpos = pictureBox1.Size.Height / Config.Height;
+
+                    //Deteta colisao com as fronteiras do jogo.
+                    if (Snake[i].x < 0 || Snake[i].y < 0 || Snake[i].x >= maxXpos || Snake[i].y >= maxYpos)
+                    {
+                        die();
+                    }
+
+                    //Deteta colisao com o corpo
+                    for (int j = 1; j < Snake.Count; j++)
+                    {
+                        if (Snake[i].x == Snake[j].x && Snake[i].y == Snake[j].y) die();
+                    }
+
+                    //Deteta colisao com comida
+                    if (Snake[0].x == food.x && Snake[0].y == food.y) eat();
                 }
                 else
                 {
@@ -164,6 +178,43 @@ namespace SnakeGame
                     Snake[i].y = Snake[i - 1].y;
                 }
             }
+        }
+
+        private void die()
+        {
+            Config.GameOver = true;
+        }
+
+        private void eat()
+        {
+            //Aumenta o corpo.
+            Circle circle = new Circle
+            {
+                x = Snake[Snake.Count - 1].x,
+                y = Snake[Snake.Count - 1].y
+            };
+            Snake.Add(circle);
+
+            //Aumenta a pontuacao
+            Config.Score += Config.Points;
+            label_score.Text = Config.Score.ToString();
+
+            generate_food();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            Input.changestate(e.KeyCode, true);
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            Input.changestate(e.KeyCode, false);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
