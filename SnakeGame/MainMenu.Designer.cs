@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -48,7 +49,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(243, 54);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(91, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Iniciar Jogo";
             this.button1.UseVisualStyleBackColor = true;
@@ -58,9 +59,9 @@
             // 
             this.button2.Location = new System.Drawing.Point(243, 83);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(91, 23);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Créditos";
+            this.button2.Text = "Sobre o Jogo";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -68,7 +69,7 @@
             // 
             this.button3.Location = new System.Drawing.Point(243, 112);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(91, 23);
             this.button3.TabIndex = 3;
             this.button3.Text = "Sair";
             this.button3.UseVisualStyleBackColor = true;
@@ -83,6 +84,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenu";
             this.Text = "Menu Principal";
             this.ResumeLayout(false);

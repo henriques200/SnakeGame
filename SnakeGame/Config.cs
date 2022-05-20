@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace SnakeGame
 {
     // Enumerar todas as direcoes possiveis no jogo.
-    public enum Direction { Up, Down, Left, Right}
+    public enum Direction { Up, Down, Left, Right, Pause}
 
     class Config
     {
@@ -26,7 +26,7 @@ namespace SnakeGame
             Height = 16;
             Speed = 16;
             Score = 0;
-            Points = 10;
+            Points = 1;
             GameOver = false;
             direction = Direction.Down;
         }

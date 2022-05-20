@@ -38,6 +38,7 @@ namespace SnakeGame
         private void start_game()
         {
             label_game_over.Visible = false;
+            pause_label.Visible = false;
 
             //Volta a definir as configuracoes iniciais.
             new Config();
@@ -82,13 +83,33 @@ namespace SnakeGame
             }
             else
             {
-                if (Input.keypressed(Keys.Right) && Config.direction != Direction.Left) Config.direction = Direction.Right;
-                else if (Input.keypressed(Keys.Left) && Config.direction != Direction.Right) Config.direction = Direction.Left;
-                else if (Input.keypressed(Keys.Up) && Config.direction != Direction.Down) Config.direction = Direction.Up;
-                else if (Input.keypressed(Keys.Down) && Config.direction != Direction.Up) Config.direction = Direction.Down;
-
-                move_player();
+                if (Input.keypressed(Keys.Right) && Config.direction != Direction.Left)
+                {
+                    Config.direction = Direction.Right;
+                    pause_label.Visible = false;
+                }
+                else if (Input.keypressed(Keys.Left) && Config.direction != Direction.Right)
+                {
+                    Config.direction = Direction.Left;
+                    pause_label.Visible = false;
+                }
+                else if (Input.keypressed(Keys.Up) && Config.direction != Direction.Down)
+                {
+                    Config.direction = Direction.Up;
+                    pause_label.Visible = false;
+                }
+                else if (Input.keypressed(Keys.Down) && Config.direction != Direction.Up)
+                {
+                    Config.direction = Direction.Down;
+                    pause_label.Visible = false;
+                }
+                else if (Input.keypressed(Keys.Space))
+                {
+                    Config.direction = Direction.Pause;
+                    pause_label.Visible = true;
+                }
                 
+                move_player();
             }
 
             //Certificar que os dados sao eliminados para proceder a sua atualizacao.
@@ -182,6 +203,7 @@ namespace SnakeGame
 
         private void die()
         {
+            pause_label.Visible = false;
             Config.GameOver = true;
         }
 

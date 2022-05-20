@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Game));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_txt_1 = new System.Windows.Forms.Label();
             this.label_score = new System.Windows.Forms.Label();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.label_game_over = new System.Windows.Forms.Label();
+            this.pause_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +44,7 @@
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.pictureBox1.Location = new System.Drawing.Point(12, 41);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(449, 397);
+            this.pictureBox1.Size = new System.Drawing.Size(544, 447);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -79,17 +81,30 @@
             this.label_game_over.Visible = false;
             this.label_game_over.Click += new System.EventHandler(this.label1_Click);
             // 
+            // pause_label
+            // 
+            this.pause_label.AutoSize = true;
+            this.pause_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pause_label.Location = new System.Drawing.Point(245, 258);
+            this.pause_label.Name = "pause_label";
+            this.pause_label.Size = new System.Drawing.Size(73, 24);
+            this.pause_label.TabIndex = 5;
+            this.pause_label.Text = "PAUSA";
+            this.pause_label.Visible = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(477, 450);
+            this.ClientSize = new System.Drawing.Size(568, 500);
+            this.Controls.Add(this.pause_label);
             this.Controls.Add(this.label_game_over);
             this.Controls.Add(this.label_score);
             this.Controls.Add(this.label_txt_1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Game";
-            this.Text = "Form1";
+            this.Text = "Jogo da Cobra";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
@@ -106,6 +121,7 @@
         private System.Windows.Forms.Label label_score;
         private System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Label label_game_over;
+        private System.Windows.Forms.Label pause_label;
     }
 }
 
