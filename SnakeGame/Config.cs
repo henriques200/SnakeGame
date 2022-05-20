@@ -11,12 +11,12 @@ namespace SnakeGame
 
     class Config
     {
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public int Speed { get; set; }
-        public int Score { get; set; }
-        public bool GameOver { get; set; }
-        public Direction direction { get; set; }
+        public static int Width { get; set; }
+        public static int Height { get; set; }
+        public static int Speed { get; set; }
+        public static int Score { get; set; }
+        public static bool GameOver { get; set; }
+        public static Direction direction { get; set; }
 
         // Construtor com as configuracoes iniciais.
         public Config()
