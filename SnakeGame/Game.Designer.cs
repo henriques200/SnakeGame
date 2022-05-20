@@ -1,6 +1,6 @@
 ﻿namespace SnakeGame
 {
-    partial class Form1
+    partial class Game
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -40,9 +40,9 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 41);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(378, 425);
+            this.pictureBox1.Size = new System.Drawing.Size(449, 397);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
@@ -51,7 +51,7 @@
             // 
             this.label_txt_1.AutoSize = true;
             this.label_txt_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_txt_1.Location = new System.Drawing.Point(414, 13);
+            this.label_txt_1.Location = new System.Drawing.Point(12, 9);
             this.label_txt_1.Name = "label_txt_1";
             this.label_txt_1.Size = new System.Drawing.Size(90, 20);
             this.label_txt_1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.label_score.AutoSize = true;
             this.label_score.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_score.Location = new System.Drawing.Point(510, 13);
+            this.label_score.Location = new System.Drawing.Point(108, 9);
             this.label_score.Name = "label_score";
             this.label_score.Size = new System.Drawing.Size(29, 20);
             this.label_score.TabIndex = 2;
@@ -70,24 +70,25 @@
             // label_game_over
             // 
             this.label_game_over.AutoSize = true;
-            this.label_game_over.Location = new System.Drawing.Point(415, 122);
+            this.label_game_over.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_game_over.Location = new System.Drawing.Point(22, 51);
             this.label_game_over.Name = "label_game_over";
-            this.label_game_over.Size = new System.Drawing.Size(35, 13);
+            this.label_game_over.Size = new System.Drawing.Size(51, 20);
             this.label_game_over.TabIndex = 4;
             this.label_game_over.Text = "label1";
             this.label_game_over.Visible = false;
             this.label_game_over.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form1
+            // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(622, 450);
+            this.ClientSize = new System.Drawing.Size(477, 450);
             this.Controls.Add(this.label_game_over);
             this.Controls.Add(this.label_score);
             this.Controls.Add(this.label_txt_1);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
+            this.Name = "Game";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

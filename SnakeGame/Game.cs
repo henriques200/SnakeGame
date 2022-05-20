@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace SnakeGame
 {
-    public partial class Form1 : Form
+    public partial class Game : Form
     {
         //Declarar um novo jogador
         private List<Circle> Snake = new List<Circle>();
@@ -19,10 +19,10 @@ namespace SnakeGame
         //Declarar um objeto para comida
         private Circle food = new Circle();
 
-        public Form1()
+        public Game()
         {
             InitializeComponent();
-
+            
             //Definir as configuracoes iniciais.
             new Config();
 
@@ -78,6 +78,7 @@ namespace SnakeGame
             if(Config.GameOver)
             {
                 if (Input.keypressed(Keys.Enter)) start_game();
+                else if(Input.keypressed(Keys.Escape)) this.Close();
             }
             else
             {
@@ -104,13 +105,12 @@ namespace SnakeGame
             Graphics canvas = e.Graphics;
             if (!Config.GameOver)
             {
-                //Definir a cor da cobra
-                
-
                 //Desenha os elementos do jogo.
                 for (int i=0; i<Snake.Count; i++)
                 {
+                    //Definir a cor da cobra
                     Brush snake_color;
+
                     if (i == 0) snake_color = Brushes.Black; //Desenha Cabeca
                     else snake_color = Brushes.Green; //Desenha resto do corpo
 
@@ -126,7 +126,7 @@ namespace SnakeGame
             }
             else
             {
-                string game_over_msg = "Fim do Jogo!\nA tua pontuação final é:" + Config.Score + "\nPrime ENTER para tentar de novo.";
+                string game_over_msg = "Fim do Jogo!\nA tua pontuação final é: " + Config.Score + "\nPrima ENTER para tentar de novo ou ESC para sair.";
                 label_game_over.Text = game_over_msg;
                 label_game_over.Visible = true;
             }
