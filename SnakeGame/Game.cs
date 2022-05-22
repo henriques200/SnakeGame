@@ -27,6 +27,7 @@ namespace SnakeGame
             new Config();
 
             //Definir a velocidade do jogo e iniciar o temporizador
+            Config.Speed = MainMenu.difficulty_speed;
             gameTimer.Interval = 1000 / Config.Speed;
             gameTimer.Tick += update_screen;
             gameTimer.Start();
@@ -178,10 +179,19 @@ namespace SnakeGame
                     int maxXpos = pictureBox1.Size.Width / Config.Width;
                     int maxYpos = pictureBox1.Size.Height / Config.Height;
 
-                    //Deteta colisao com as fronteiras do jogo.
-                    if (Snake[i].x < 0 || Snake[i].y < 0 || Snake[i].x >= maxXpos || Snake[i].y >= maxYpos)
+                    
+                    if (MainMenu.game_borders)
                     {
-                        die();
+                        //Deteta colisao com as fronteiras do jogo (fronteiras ativadas).
+                        if (Snake[i].x < 0 || Snake[i].y < 0 || Snake[i].x >= maxXpos || Snake[i].y >= maxYpos) die();
+                    }
+                    else
+                    {
+                        // Passa para o outro lado do jogo (fronteiras desativadas).
+                        if (Snake[i].x < 0) Snake[i].x = maxXpos;
+                        if (Snake[i].x > maxXpos) Snake[i].x = 0;
+                        if (Snake[i].y < 0) Snake[i].y = maxYpos;
+                        if (Snake[i].y > maxYpos) Snake[i].y = 0;
                     }
 
                     //Deteta colisao com o corpo
