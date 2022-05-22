@@ -13,7 +13,7 @@ namespace SnakeGame
     public partial class MainMenu : Form
     {
         public static int difficulty_speed;
-        public static bool game_borders = false;
+        public static bool game_borders;
 
         public MainMenu()
         {
@@ -23,6 +23,7 @@ namespace SnakeGame
         private void button1_Click(object sender, EventArgs e)
         {
             difficulty_speed = 16;
+            game_borders = false;
             //Link para o Jogo
             Game game = new Game();
             game.Show();
