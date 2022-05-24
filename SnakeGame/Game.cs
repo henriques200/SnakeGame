@@ -38,6 +38,7 @@ namespace SnakeGame
 
         private void start_game()
         {
+            //Desliga todas as mensagens do jogo.
             label_game_over.Visible = false;
             pause_label.Visible = false;
 
@@ -80,7 +81,6 @@ namespace SnakeGame
             if(Config.GameOver)
             {
                 if (Input.keypressed(Keys.Enter)) start_game();
-                else if(Input.keypressed(Keys.Escape)) this.Close();
             }
             else
             {
@@ -148,7 +148,7 @@ namespace SnakeGame
             }
             else
             {
-                string game_over_msg = "Fim do Jogo!\nA tua pontuação final é: " + Config.Score + "\nPrima ENTER para tentar de novo ou ESC para sair.";
+                string game_over_msg = "Fim do Jogo!\nA tua pontuação final é: " + Config.Score + "\nPrima ENTER para tentar de novo ou fecha a janela para sair.";
                 label_game_over.Text = game_over_msg;
                 label_game_over.Visible = true;
             }
