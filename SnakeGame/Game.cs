@@ -8,6 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//Bibliotecas para JSON
+using System.IO;
+using Newtonsoft.Json;
+//Biblioteca InputBoxes
+using Microsoft.VisualBasic;
 
 namespace SnakeGame
 {
@@ -215,6 +220,15 @@ namespace SnakeGame
         {
             pause_label.Visible = false;
             Config.GameOver = true;
+
+            //Abre o ficheiro de pontuacoes para leitura
+            string json_string = System.IO.File.ReadAllText(MainMenu.score_data);
+            List<LeaderBoard> leaders_list = JsonConvert.DeserializeObject<List<LeaderBoard>>(json_string);
+
+            //Adiciona a nova pontuacao e grava no ficheiro
+            leaders_list.Add(new LeaderBoard(Config.Score, MainMenu.username));
+            string json_data = JsonConvert.SerializeObject(leaders_list, Formatting.Indented);    
+            System.IO.File.WriteAllText(MainMenu.score_data, json_data);
         }
 
         private void eat()

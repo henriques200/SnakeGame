@@ -44,7 +44,7 @@
             // mascot
             // 
             this.mascot.Image = ((System.Drawing.Image)(resources.GetObject("mascot.Image")));
-            this.mascot.Location = new System.Drawing.Point(261, 50);
+            this.mascot.Location = new System.Drawing.Point(250, 50);
             this.mascot.Name = "mascot";
             this.mascot.Size = new System.Drawing.Size(80, 50);
             this.mascot.TabIndex = 0;
@@ -55,7 +55,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(179, 9);
+            this.label1.Location = new System.Drawing.Point(169, 9);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.label1.Size = new System.Drawing.Size(244, 38);
@@ -112,9 +112,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(13, 275);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 13);
+            this.label7.Size = new System.Drawing.Size(120, 13);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Professora Carla Sousa";
+            this.label7.Text = "Professora: Carla Sousa";
             // 
             // label8
             // 
@@ -129,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 383);
+            this.ClientSize = new System.Drawing.Size(580, 357);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -139,9 +139,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mascot);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "About";
             this.Text = "Sobre o jogo";
+            this.Load += new System.EventHandler(this.About_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mascot)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -35,6 +35,9 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btn_hard = new System.Windows.Forms.Button();
             this.btn_very_hard = new System.Windows.Forms.Button();
+            this.leaders_board = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -97,20 +100,53 @@
             this.btn_very_hard.UseVisualStyleBackColor = true;
             this.btn_very_hard.Click += new System.EventHandler(this.btn_very_hard_Click);
             // 
+            // leaders_board
+            // 
+            this.leaders_board.AutoSize = true;
+            this.leaders_board.Location = new System.Drawing.Point(12, 193);
+            this.leaders_board.Name = "leaders_board";
+            this.leaders_board.Size = new System.Drawing.Size(35, 13);
+            this.leaders_board.TabIndex = 6;
+            this.leaders_board.Text = "label2";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 156);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(116, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Pontuações mais altas:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 169);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(152, 13);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "(Clica na Janela para Atualizar)";
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(571, 283);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.leaders_board);
             this.Controls.Add(this.btn_very_hard);
             this.Controls.Add(this.btn_hard);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_easy);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainMenu";
             this.Text = "Menu Principal";
+            this.Click += new System.EventHandler(this.MainMenu_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +160,8 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button btn_hard;
         private System.Windows.Forms.Button btn_very_hard;
+        private System.Windows.Forms.Label leaders_board;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -19,7 +19,12 @@ namespace SnakeGame
 
         private void mascot_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Teste!");
+            MessageBox.Show("ssssssssssss!", "ssssssssssss!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+        }
+
+        private void About_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
