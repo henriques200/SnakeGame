@@ -46,9 +46,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(113, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(352, 31);
+            this.label1.Size = new System.Drawing.Size(362, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Bem Vindo ao jogo da cobra";
+            this.label1.Text = "Bem vindo ao Jogo da Cobra";
             // 
             // btn_easy
             // 
@@ -148,7 +148,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "MainMenu";
-            this.Text = "Menu Principal";
+            this.Text = "Jogo da Cobra - Menu Principal";
             this.Click += new System.EventHandler(this.MainMenu_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
