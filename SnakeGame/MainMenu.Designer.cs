@@ -59,6 +59,7 @@
             this.btn_easy.Text = "Normal";
             this.btn_easy.UseVisualStyleBackColor = true;
             this.btn_easy.Click += new System.EventHandler(this.button1_Click);
+            this.btn_easy.MouseHover += new System.EventHandler(this.btn_easy_MouseHover);
             // 
             // button2
             // 
@@ -89,6 +90,7 @@
             this.btn_hard.Text = "Dificil";
             this.btn_hard.UseVisualStyleBackColor = true;
             this.btn_hard.Click += new System.EventHandler(this.btn_hard_Click);
+            this.btn_hard.MouseHover += new System.EventHandler(this.btn_hard_MouseHover);
             // 
             // btn_very_hard
             // 
@@ -99,6 +101,7 @@
             this.btn_very_hard.Text = "Muito Dificil";
             this.btn_very_hard.UseVisualStyleBackColor = true;
             this.btn_very_hard.Click += new System.EventHandler(this.btn_very_hard_Click);
+            this.btn_very_hard.MouseHover += new System.EventHandler(this.btn_very_hard_MouseHover);
             // 
             // leaders_board
             // 

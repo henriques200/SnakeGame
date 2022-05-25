@@ -12,6 +12,8 @@ namespace SnakeGame
 {
     public partial class About : Form
     {
+        ToolTip comentario = new ToolTip();
+
         public About()
         {
             InitializeComponent();
@@ -25,6 +27,12 @@ namespace SnakeGame
         private void About_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void mascot_MouseHover(object sender, EventArgs e)
+        {
+            //Mostrar comentario quando passa o rato pela imagem
+            comentario.Show("?????", mascot);
         }
     }
 }
