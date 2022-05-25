@@ -188,7 +188,7 @@ namespace SnakeGame
                     if (MainMenu.game_borders)
                     {
                         //Deteta colisao com as fronteiras do jogo (fronteiras ativadas).
-                        if (Snake[i].x < 0 || Snake[i].y < 0 || Snake[i].x >= maxXpos || Snake[i].y >= maxYpos) die();
+                        if (Snake[i].x < 0 || Snake[i].y < 0 || Snake[i].x > maxXpos || Snake[i].y > maxYpos) die();
                     }
                     else
                     {
