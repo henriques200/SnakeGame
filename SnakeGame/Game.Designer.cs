@@ -85,11 +85,11 @@
             // 
             this.pause_label.AutoSize = true;
             this.pause_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pause_label.Location = new System.Drawing.Point(245, 258);
+            this.pause_label.Location = new System.Drawing.Point(124, 264);
             this.pause_label.Name = "pause_label";
-            this.pause_label.Size = new System.Drawing.Size(73, 24);
+            this.pause_label.Size = new System.Drawing.Size(309, 24);
             this.pause_label.TabIndex = 5;
-            this.pause_label.Text = "PAUSA";
+            this.pause_label.Text = "PAUSA - Usa as setas para retomar.";
             this.pause_label.Visible = false;
             // 
             // Game
