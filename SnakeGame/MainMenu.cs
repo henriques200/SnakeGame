@@ -32,7 +32,7 @@ namespace SnakeGame
             //Abrir e ler o ficheiro de pontuacoes
             string json_string = System.IO.File.ReadAllText(score_data);
             List<LeaderBoard> leaders_list = JsonConvert.DeserializeObject<List<LeaderBoard>>(json_string).OrderByDescending(x => x.FinalScore).ToList();
-
+                
             //Inicia o podio e exibe por ordem numerica
             podio = 1;
             leaders_board.Text = ""; //Limpa o texto que esta por omissao
